@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class ImoCollectionViewCell : UICollectionViewCell {
+open class ImoCollectionViewCell : UICollectionViewCell {
     
-    public func setUpWithSource(source:ImoCollectionViewSource) {
+    open func setUpWithSource(source:ImoCollectionViewSource) {
         self.backgroundColor = UIColor.green;        
     }
     

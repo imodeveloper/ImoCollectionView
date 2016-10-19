@@ -8,17 +8,17 @@
 
 import UIKit
 
-public class ImoCollectionViewSource : NSObject {
+open class ImoCollectionViewSource : NSObject {
 
-    var cellClass : String
-    public var height : CGFloat
-    public var width : CGFloat
+    open var cellClass : String
+    open var height : CGFloat
+    open var width : CGFloat
     
     public override init() {
         
         self.cellClass = "ImoCollectionViewSDK.ImoCollectionViewCell"
-        self.height = 100
-        self.width = 100
+        self.height = 50
+        self.width = 50
         
         super.init()
         

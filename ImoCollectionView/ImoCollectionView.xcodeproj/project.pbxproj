@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410D81011DB7A8E10040A20A /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D81001DB7A8E10040A20A /* TextCell.swift */; };
 		412836BB1DB79A190027CC18 /* ImoCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412836BA1DB79A190027CC18 /* ImoCollectionViewSection.swift */; };
 		414725DA1DB6191C0014BDB4 /* ImoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414725D91DB6191C0014BDB4 /* ImoCollectionViewCell.swift */; };
 		41E4F4E71DAFACC1005D3AA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4F4E61DAFACC1005D3AA3 /* AppDelegate.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		074675EFDA2BF01AB91E15F5 /* Pods-ImoCollectionViewSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImoCollectionViewSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImoCollectionViewSDKTests/Pods-ImoCollectionViewSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1FD490F41B02672A644C33AD /* Pods-ImoCollectionViewSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImoCollectionViewSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImoCollectionViewSDKTests/Pods-ImoCollectionViewSDKTests.release.xcconfig"; sourceTree = "<group>"; };
+		410D81001DB7A8E10040A20A /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		412836BA1DB79A190027CC18 /* ImoCollectionViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoCollectionViewSection.swift; sourceTree = "<group>"; };
 		414725D91DB6191C0014BDB4 /* ImoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoCollectionViewCell.swift; sourceTree = "<group>"; };
 		41E4F4E31DAFACC1005D3AA3 /* ImoCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImoCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 			children = (
 				41E4F4E61DAFACC1005D3AA3 /* AppDelegate.swift */,
 				41E4F4E81DAFACC1005D3AA3 /* ViewController.swift */,
+				410D81001DB7A8E10040A20A /* TextCell.swift */,
 				41E4F4EA1DAFACC1005D3AA3 /* Main.storyboard */,
 				41E4F4ED1DAFACC1005D3AA3 /* Assets.xcassets */,
 				41E4F4EF1DAFACC1005D3AA3 /* LaunchScreen.storyboard */,
@@ -419,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E4F4E91DAFACC1005D3AA3 /* ViewController.swift in Sources */,
+				410D81011DB7A8E10040A20A /* TextCell.swift in Sources */,
 				41E4F4E71DAFACC1005D3AA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

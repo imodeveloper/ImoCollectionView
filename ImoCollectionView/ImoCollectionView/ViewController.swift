@@ -18,18 +18,31 @@ class ViewController: UIViewController {
         let section = ImoCollectionViewSection()
         section.minimumInteritemSpacing = 10
         section.minimumLineSpacing = 10
+        
 
-        for _ in 1...100
+        for _ in 1...20
         {
             let source = ImoCollectionViewSource()
-            source.width = 110
             section.addSource(source: source);
+        }
+        
+        
+        let section1 = ImoCollectionViewSection()
+        section1.minimumInteritemSpacing = 10
+        section1.minimumLineSpacing = 10
+        
+        for _ in 1...20
+        {
+            let source = TextCellSource()
+            source.width = 110
+            section1.addSource(source: source);
         }
         
         let layout = UICollectionViewFlowLayout()
         let collectionView = ImoCollectionView(controller: self, collectionViewLayout: layout)
 
         collectionView.addSection(section: section);
+        collectionView.addSection(section: section1);
         
         self.view.addSubview(collectionView)
         collectionView.reloadData()
