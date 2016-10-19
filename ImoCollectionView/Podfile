@@ -1,0 +1,11 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ImoCollectionViewSDKTests' do
+    
+	use_frameworks!
+    
+    pod 'Nimble', '~> 5.0'
+    pod 'Quick', '~> 0.10'
+
+end
