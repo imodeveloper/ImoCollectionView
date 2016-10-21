@@ -15,10 +15,11 @@ class ViewController: UIViewController {
     {
         super.viewDidLoad()
         
+        // MARK: - Section
+        
         let section = ImoCollectionViewSection()
         section.minimumInteritemSpacing = 10
         section.minimumLineSpacing = 10
-        
 
         for _ in 1...20
         {
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
             section.addSource(source: source);
         }
         
+        // MARK: - Section 2
         
         let section1 = ImoCollectionViewSection()
         section1.minimumInteritemSpacing = 10
@@ -38,6 +40,8 @@ class ViewController: UIViewController {
             section1.addSource(source: source);
         }
         
+        // MARK: - CollectionView
+        
         let layout = UICollectionViewFlowLayout()
         let collectionView = ImoCollectionView(controller: self, collectionViewLayout: layout)
 
@@ -45,13 +49,28 @@ class ViewController: UIViewController {
         collectionView.addSection(section: section1);
         
         self.view.addSubview(collectionView)
-        collectionView.reloadData()
         
-        let deadlineTime = DispatchTime.now() + .seconds(2)
-        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+        collectionView.didSelectItemAt = { indexPath in
             
-            collectionView.reloadData()
+            print(indexPath)
+            
         }
+        
+        collectionView.didSelectSource = { source in
+        
+            print(source)
+            
+        }
+        
+        
+        collectionView.scrollViewDidScroll = { scrollView in
+            
+            print("scroll")
+            
+        }
+        
+        
+        
     }
 }
 

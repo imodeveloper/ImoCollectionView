@@ -19,8 +19,16 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     var registeredCells = Array<String>()
     var registeredViews = Array<String>()
     var sections = Array<ImoCollectionViewSection>()
-    var imoDelegate : AnyObject?
-
+    
+    public var didSelectSource:((ImoCollectionViewSource?) -> (Void))?
+    public var didSelectItemAt:((IndexPath) -> (Void))?
+    public var scrollViewDidScroll:((UIScrollView) -> (Void))?
+    public var scrollViewDidZoom:((UIScrollView) -> (Void))?
+    public var scrollViewWillBeginDragging:((UIScrollView) -> (Void))?
+    public var scrollViewWillEndDragging:((_ scrollView: UIScrollView, _ velocity: CGPoint, _ targetContentOffset: UnsafeMutablePointer<CGPoint>) -> (Void))?
+    public var scrollViewDidEndDragging:((_ scrollView: UIScrollView, _ decelerate: Bool) -> (Void))?
+    public var scrollViewWillBeginDecelerating:((UIScrollView) -> (Void))?
+    
     // MARK: - UICollectionView
     
     public init(controller: UIViewController, collectionViewLayout layout: UICollectionViewLayout) {
@@ -45,6 +53,21 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // MARK: - UICollectionViewDelegate
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        if let closure = self.didSelectItemAt {
+            closure(indexPath)
+        }
+        
+        if let closure = self.didSelectSource {
+            closure(self.sourceForIndexPath(indexPath: indexPath))
+        }
+        
     }
     
     // MARK: - UICollectionViewDataSource
@@ -86,7 +109,7 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
         if self.sections.indices.contains(sectionIndex) {
             
             let section : ImoCollectionViewSection = self.sections[sectionIndex]
-            return section.sources.count;
+            return section.countSources()
         }
         
         return 0
@@ -106,11 +129,7 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
         if self.sections.indices.contains(indexPath.section) {
             
             let section : ImoCollectionViewSection = self.sections[indexPath.section]
-            
-            if section.sources.indices.contains(indexPath.row) {
-                
-                return section.sources[indexPath.row];
-            }
+            return section.sourceAtIndex(index: indexPath.row)
         }
         
         return nil
@@ -170,6 +189,75 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    
+    // MARK: - UIScrollViewDelegate
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+        if let closure = self.scrollViewDidScroll {
+            closure(scrollView)
+        }
+    }
+    
+    public func scrollViewDidZoom(_ scrollView: UIScrollView)  {
+        
+        if let closure = self.scrollViewDidZoom {
+            closure(scrollView)
+        }
+    }
+    
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        if let closure = self.scrollViewWillBeginDragging {
+            closure(scrollView)
+        }
+    }
+    
+   
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        if let closure = self.scrollViewWillEndDragging {
+            closure(scrollView, velocity, targetContentOffset)
+        }
+    }
+    
+
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        if let closure = self.scrollViewDidEndDragging {
+            closure(scrollView, decelerate)
+        }
+        
+    }
+    
+    public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        
+        if let closure = self.scrollViewWillBeginDecelerating {
+            closure(scrollView)
+        }
+        
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        
+    }
+    
+    public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        
+        
+    }
+    
+    public func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+        
+        return true
+        
+    }
+    
+    public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        
         
     }
     

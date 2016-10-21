@@ -19,7 +19,6 @@ open class ImoCollectionViewSource : NSObject {
         self.cellClass = "ImoCollectionViewSDK.ImoCollectionViewCell"
         self.height = 50
         self.width = 50
-        
         super.init()
         
     }

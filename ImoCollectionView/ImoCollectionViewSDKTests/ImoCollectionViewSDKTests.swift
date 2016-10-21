@@ -16,28 +16,33 @@ class ImoCollectionViewSDKTests: QuickSpec {
     
     override func spec()
     {
-        context("CollectionView") { 
+        let source1 = ImoCollectionViewSource()
+        let source2 = ImoCollectionViewSource()
+        let source3 = ImoCollectionViewSource()
+        let source4 = ImoCollectionViewSource()
         
-            let source1 = ImoCollectionViewSource()
-            let source2 = ImoCollectionViewSource()
-            let source3 = ImoCollectionViewSource()
-            let source4 = ImoCollectionViewSource()
-            
-            let section = ImoCollectionViewSection()
-            section.addSource(source: source1)
-            section.addSource(source: source2)
-            
-            let section2 = ImoCollectionViewSection()
-            section2.addSource(source: source3)
-            section2.addSource(source: source4)
-            
-            let layout = UICollectionViewLayout()
-            
-            let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 100, height: 100))
-            let collectionView = ImoCollectionView(frame: rect, collectionViewLayout: layout)
-            
-            collectionView.addSection(section: section)
-            collectionView.addSection(section: section2)
+        let source5 = ImoCollectionViewSource()
+        
+        
+        let section = ImoCollectionViewSection()
+        section.addSource(source: source1)
+        section.addSource(source: source2)
+        
+        let section2 = ImoCollectionViewSection()
+        section2.addSource(source: source3)
+        section2.addSource(source: source4)
+        
+        let layout = UICollectionViewLayout()
+        
+        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 100, height: 100))
+        let collectionView = ImoCollectionView(frame: rect, collectionViewLayout: layout)
+        
+        collectionView.addSection(section: section)
+        collectionView.addSection(section: section2)
+        
+        
+        context("CollectionView")
+        {
             
             it("To find source")
             {
@@ -53,7 +58,7 @@ class ImoCollectionViewSDKTests: QuickSpec {
             
             it("To not find source")
             {
-                let source = collectionView.sourceForIndexPath(indexPath: IndexPath(row: 0, section: 3))
+                let source = collectionView.sourceForIndexPath(indexPath: IndexPath(row: 0, section: 5))
                 expect(source).to(beNil(), description: "To be nil")
             }
             
@@ -89,7 +94,57 @@ class ImoCollectionViewSDKTests: QuickSpec {
                 expect(count).to(equal(0))
             }
             
+        }
+        
+        context("CollectionViewSection")
+        {
+            it ("Count sources")
+            {
+                expect(section.countSources()).to(equal(2))
+            }
+            
+            it ("Contain index true")
+            {
+                expect(section.containIndex(index: 1)).to(equal(true))
+            }
+            
+            it ("Contain index false")
+            {
+                expect(section.containIndex(index: 10)).to(equal(false))
+            }
+            
+            it ("Source at index")
+            {
+                let source = section.sourceAtIndex(index: 0)
+                expect(source).to(equal(source1))
+            }
+            
+            it ("Source at index nill")
+            {
+                let source = section.sourceAtIndex(index: 10)
+                expect(source).to(beNil())
+            }
+            
+            it ("Add source")
+            {
+                section.addSource(source: source5)
+                expect(section.countSources()).to(equal(3))
+            }
+            
+            it ("Remove source")
+            {
+                section.removeSource(source: source5)
+                expect(section.countSources()).to(equal(2))
+            }
+            
+            it ("Index of source")
+            {
+                let index = section.indexOfSource(source: source2)
+                expect(index).to(equal(1))
+            }
             
         }
+        
+        
     }
 }
