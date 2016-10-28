@@ -8,3 +8,10 @@
 
 ImoCollectionView is the simplest way to work with an CollectionView.
 
+## Installation
+
+ImoCollectionView is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+ 
+    pod "ImoCollectionView"
+
