@@ -6,5 +6,5 @@
 
 ## Description
 
-ImoCollectionView is the simpliest way to work with an CollectionView.
+ImoCollectionView is the simplest way to work with an CollectionView.
 
