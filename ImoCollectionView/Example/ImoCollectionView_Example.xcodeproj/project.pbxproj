@@ -16,8 +16,20 @@
 		413160B31DC351B70071D8EA /* DemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413160AF1DC351B70071D8EA /* DemoCell.xib */; };
 		413160B41DC351B70071D8EA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413160B01DC351B70071D8EA /* HeaderView.swift */; };
 		413160B51DC351B70071D8EA /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413160B11DC351B70071D8EA /* HeaderView.xib */; };
+		41C6F7821DC3545A00611E60 /* ImoCollectionView_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C6F7811DC3545A00611E60 /* ImoCollectionView_ExampleTests.swift */; };
+		4DED99CC55E59065D3BB6897 /* Pods_ImoCollectionView_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74904D543FA98E451E1D2226 /* Pods_ImoCollectionView_ExampleTests.framework */; };
 		7E532F61DC65C11CCA5D56D5 /* Pods_ImoCollectionView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84C73685D0E5F09544A8CD0 /* Pods_ImoCollectionView_Example.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41C6F7841DC3545A00611E60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 413160911DC350120071D8EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 413160981DC350120071D8EA;
+			remoteInfo = ImoCollectionView_Example;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		413160991DC350120071D8EA /* ImoCollectionView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImoCollectionView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,8 +43,14 @@
 		413160AF1DC351B70071D8EA /* DemoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCell.xib; sourceTree = "<group>"; };
 		413160B01DC351B70071D8EA /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		413160B11DC351B70071D8EA /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		41C6F77F1DC3545A00611E60 /* ImoCollectionView_ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImoCollectionView_ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41C6F7811DC3545A00611E60 /* ImoCollectionView_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImoCollectionView_ExampleTests.swift; sourceTree = "<group>"; };
+		41C6F7831DC3545A00611E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		440F1EAE0C18600B827BD4C1 /* Pods-ImoCollectionView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImoCollectionView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImoCollectionView_Example/Pods-ImoCollectionView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		648797FD6A633F7076A813E8 /* Pods-ImoCollectionView_ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImoCollectionView_ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImoCollectionView_ExampleTests/Pods-ImoCollectionView_ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		6840C9EC49CB05871D7DD849 /* Pods-ImoCollectionView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImoCollectionView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImoCollectionView_Example/Pods-ImoCollectionView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		74904D543FA98E451E1D2226 /* Pods_ImoCollectionView_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImoCollectionView_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DAB7B5F293F4C5B9AD1868 /* Pods-ImoCollectionView_ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImoCollectionView_ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImoCollectionView_ExampleTests/Pods-ImoCollectionView_ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D84C73685D0E5F09544A8CD0 /* Pods_ImoCollectionView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImoCollectionView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,6 +63,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		41C6F77C1DC3545A00611E60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DED99CC55E59065D3BB6897 /* Pods_ImoCollectionView_ExampleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -53,6 +79,8 @@
 			children = (
 				6840C9EC49CB05871D7DD849 /* Pods-ImoCollectionView_Example.debug.xcconfig */,
 				440F1EAE0C18600B827BD4C1 /* Pods-ImoCollectionView_Example.release.xcconfig */,
+				C3DAB7B5F293F4C5B9AD1868 /* Pods-ImoCollectionView_ExampleTests.debug.xcconfig */,
+				648797FD6A633F7076A813E8 /* Pods-ImoCollectionView_ExampleTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -61,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				4131609B1DC350120071D8EA /* ImoCollectionView_Example */,
+				41C6F7801DC3545A00611E60 /* ImoCollectionView_ExampleTests */,
 				4131609A1DC350120071D8EA /* Products */,
 				35C2D5D111FFC961D16C111A /* Pods */,
 				C01678AC6E9B3540F71E096D /* Frameworks */,
@@ -71,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				413160991DC350120071D8EA /* ImoCollectionView_Example.app */,
+				41C6F77F1DC3545A00611E60 /* ImoCollectionView_ExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,10 +122,20 @@
 			path = ImoCollectionView_Example;
 			sourceTree = "<group>";
 		};
+		41C6F7801DC3545A00611E60 /* ImoCollectionView_ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				41C6F7811DC3545A00611E60 /* ImoCollectionView_ExampleTests.swift */,
+				41C6F7831DC3545A00611E60 /* Info.plist */,
+			);
+			path = ImoCollectionView_ExampleTests;
+			sourceTree = "<group>";
+		};
 		C01678AC6E9B3540F71E096D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D84C73685D0E5F09544A8CD0 /* Pods_ImoCollectionView_Example.framework */,
+				74904D543FA98E451E1D2226 /* Pods_ImoCollectionView_ExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,6 +163,27 @@
 			productReference = 413160991DC350120071D8EA /* ImoCollectionView_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		41C6F77E1DC3545A00611E60 /* ImoCollectionView_ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41C6F7881DC3545A00611E60 /* Build configuration list for PBXNativeTarget "ImoCollectionView_ExampleTests" */;
+			buildPhases = (
+				1AA9DC99322BBD51EC557708 /* [CP] Check Pods Manifest.lock */,
+				41C6F77B1DC3545A00611E60 /* Sources */,
+				41C6F77C1DC3545A00611E60 /* Frameworks */,
+				41C6F77D1DC3545A00611E60 /* Resources */,
+				D86F23E8C0B779CAE03CCFCB /* [CP] Embed Pods Frameworks */,
+				85B191AC93647423D02638CB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41C6F7851DC3545A00611E60 /* PBXTargetDependency */,
+			);
+			name = ImoCollectionView_ExampleTests;
+			productName = ImoCollectionView_ExampleTests;
+			productReference = 41C6F77F1DC3545A00611E60 /* ImoCollectionView_ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -136,6 +197,11 @@
 					413160981DC350120071D8EA = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
+					};
+					41C6F77E1DC3545A00611E60 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 413160981DC350120071D8EA;
 					};
 				};
 			};
@@ -153,6 +219,7 @@
 			projectRoot = "";
 			targets = (
 				413160981DC350120071D8EA /* ImoCollectionView_Example */,
+				41C6F77E1DC3545A00611E60 /* ImoCollectionView_ExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -167,6 +234,13 @@
 				413160A41DC350120071D8EA /* Assets.xcassets in Resources */,
 				413160B31DC351B70071D8EA /* DemoCell.xib in Resources */,
 				413160A21DC350120071D8EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41C6F77D1DC3545A00611E60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +262,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImoCollectionView_Example/Pods-ImoCollectionView_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1AA9DC99322BBD51EC557708 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		45B70190DCFD509F74DE63FB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +290,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImoCollectionView_Example/Pods-ImoCollectionView_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85B191AC93647423D02638CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImoCollectionView_ExampleTests/Pods-ImoCollectionView_ExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89E8B63D8D96BDACE15DF182 /* [CP] Check Pods Manifest.lock */ = {
@@ -218,6 +322,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		D86F23E8C0B779CAE03CCFCB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImoCollectionView_ExampleTests/Pods-ImoCollectionView_ExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -232,7 +351,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		41C6F77B1DC3545A00611E60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41C6F7821DC3545A00611E60 /* ImoCollectionView_ExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41C6F7851DC3545A00611E60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 413160981DC350120071D8EA /* ImoCollectionView_Example */;
+			targetProxy = 41C6F7841DC3545A00611E60 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		413160A01DC350120071D8EA /* Main.storyboard */ = {
@@ -371,6 +506,34 @@
 			};
 			name = Release;
 		};
+		41C6F7861DC3545A00611E60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3DAB7B5F293F4C5B9AD1868 /* Pods-ImoCollectionView_ExampleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ImoCollectionView_ExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Imodeveloperlab.ImoCollectionView-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImoCollectionView_Example.app/ImoCollectionView_Example";
+			};
+			name = Debug;
+		};
+		41C6F7871DC3545A00611E60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 648797FD6A633F7076A813E8 /* Pods-ImoCollectionView_ExampleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ImoCollectionView_ExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Imodeveloperlab.ImoCollectionView-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImoCollectionView_Example.app/ImoCollectionView_Example";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -388,6 +551,15 @@
 			buildConfigurations = (
 				413160AC1DC350120071D8EA /* Debug */,
 				413160AD1DC350120071D8EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41C6F7881DC3545A00611E60 /* Build configuration list for PBXNativeTarget "ImoCollectionView_ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41C6F7861DC3545A00611E60 /* Debug */,
+				41C6F7871DC3545A00611E60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

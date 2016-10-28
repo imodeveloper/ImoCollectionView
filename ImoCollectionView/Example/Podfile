@@ -1,5 +1,20 @@
 use_frameworks!
 
 target 'ImoCollectionView_Example' do
+  
   pod 'ImoCollectionView', :path => '../'
+
+    target 'ImoCollectionView_ExampleTests' do
+      
+      inherit! :search_paths
+        pod 'Quick', '~> 0.10'
+        pod 'Nimble', '~> 5.0.0'
+
+    end
+
 end
+
+
+
+
+

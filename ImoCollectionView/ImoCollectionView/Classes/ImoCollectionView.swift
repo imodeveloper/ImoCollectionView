@@ -123,6 +123,18 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     
     // MARK: - Helpers
     
+    
+    public func registeredViewsCount() -> Int {
+        
+        return registeredViews.count;
+    }
+    
+    public func registeredCellsCount() -> Int {
+        
+        return registeredCells.count;
+    }
+    
+    
     public func sectionsCount() -> Int {
         
         return sections.count

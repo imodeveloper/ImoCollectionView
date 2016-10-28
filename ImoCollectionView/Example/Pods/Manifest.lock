@@ -1,8 +1,12 @@
 PODS:
   - ImoCollectionView (0.1.0)
+  - Nimble (5.0.0)
+  - Quick (0.10.0)
 
 DEPENDENCIES:
   - ImoCollectionView (from `../`)
+  - Nimble (~> 5.0.0)
+  - Quick (~> 0.10)
 
 EXTERNAL SOURCES:
   ImoCollectionView:
@@ -10,7 +14,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ImoCollectionView: b7a7dd9a20dcb9249aea9e1285756fdbb77768a2
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
 
-PODFILE CHECKSUM: ca97ccc78eb6664fb88f586ae8608bff5592e671
+PODFILE CHECKSUM: a7500124bd7467fe933154a9afab519c1846e4c3
 
 COCOAPODS: 1.1.0.rc.2
