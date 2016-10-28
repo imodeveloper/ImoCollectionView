@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.1'
 
-  s.source_files = 'ImoCollectionView/Classes/**/*'
+  s.source_files = 'ImoCollectionView/Classes/**/*.swift'
   
   # s.resource_bundles = {
   #   'ImoCollectionView' => ['ImoCollectionView/Assets/*.png']
