@@ -1,0 +1,6 @@
+framework module ImoCollectionView {
+  umbrella header "ImoCollectionView-umbrella.h"
+
+  export *
+  module * { export * }
+}

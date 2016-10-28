@@ -1,0 +1,16 @@
+PODS:
+  - ImoCollectionView (0.1.0)
+
+DEPENDENCIES:
+  - ImoCollectionView (from `../`)
+
+EXTERNAL SOURCES:
+  ImoCollectionView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ImoCollectionView: b7a7dd9a20dcb9249aea9e1285756fdbb77768a2
+
+PODFILE CHECKSUM: ca97ccc78eb6664fb88f586ae8608bff5592e671
+
+COCOAPODS: 1.1.0.rc.2
