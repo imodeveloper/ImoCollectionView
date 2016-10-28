@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ImoCollectionView'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'ImoCollectionView is the simpliest way to work with an CollectionView.'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.1'
 
-  s.source_files = 'ImoCollectionView/Classes/**/*.swift'
+  s.source_files = 'ImoCollectionView/Classes/**/*.{swift}'
   
   # s.resource_bundles = {
   #   'ImoCollectionView' => ['ImoCollectionView/Assets/*.png']
