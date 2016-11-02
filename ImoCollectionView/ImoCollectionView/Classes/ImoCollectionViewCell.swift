@@ -10,13 +10,12 @@ import UIKit
 
 open class ImoCollectionViewCell : UICollectionViewCell {
     
-    open func setUpWithSource(source:ImoCollectionViewCellSource) {
-        self.backgroundColor = UIColor.green;        
+    open func setUpWithSource(source:AnyObject) {
+
     }
     
     open override func prepareForReuse() {
-        
-        
+    
         
     }
     

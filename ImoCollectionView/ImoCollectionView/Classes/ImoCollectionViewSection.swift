@@ -9,7 +9,7 @@
 import UIKit
 
 open class ImoCollectionViewSection: NSObject {
-
+    
     private var sources = Array<ImoCollectionViewCellSource>()
     
     open var minimumLineSpacing : CGFloat = 0.0
@@ -66,3 +66,4 @@ open class ImoCollectionViewSection: NSObject {
     }
     
 }
+

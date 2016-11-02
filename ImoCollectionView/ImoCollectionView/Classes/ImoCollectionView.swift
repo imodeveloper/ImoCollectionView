@@ -45,10 +45,9 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     
     func setUp() {
         
-        self.backgroundColor = UIColor.red
+        self.backgroundColor = UIColor.clear
         self.delegate = self;
         self.dataSource = self;
-        
     }
     
     required public init?(coder aDecoder: NSCoder) {

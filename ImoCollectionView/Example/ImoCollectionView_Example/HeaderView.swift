@@ -9,7 +9,7 @@
 import UIKit
 import ImoCollectionView
 
-class HeaderView: ImoCollectionReusableView {
+class HeaderView: ImoCollectionReusableView  {
 
     @IBOutlet weak var titleLabel: UILabel!
     

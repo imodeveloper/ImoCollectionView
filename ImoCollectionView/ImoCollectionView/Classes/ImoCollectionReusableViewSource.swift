@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ImoCollectionReusableViewSource : NSObject{
+open class ImoCollectionReusableViewSource : NSObject {
     
     open var viewClass = "ImoCollectionView.ImoCollectionReusableView"
     open var indentifier = "ImoCollectionReusableView"
@@ -20,6 +20,7 @@ open class ImoCollectionReusableViewSource : NSObject{
     public init(headerWithHeight height:Int) {
         
         super.init()
+        
         self.kind = UICollectionElementKindSectionHeader
         setUp(height: height)
     }
@@ -27,6 +28,7 @@ open class ImoCollectionReusableViewSource : NSObject{
     public init(footerWithHeight height:Int) {
         
         super.init()
+        
         self.kind = UICollectionElementKindSectionFooter
         setUp(height: height)
     }

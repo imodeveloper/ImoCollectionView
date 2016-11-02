@@ -10,15 +10,16 @@ import UIKit
 
 open class ImoCollectionViewCellSource : NSObject {
 
-    open var cellClass = "ImoCollectionView.ImoCollectionViewCell"
+    open var cellClass : String
     open var height : CGFloat?
     open var width : CGFloat?
     open var nib : UINib?
     
-    public override init() {
+    public init(cellClass:String) {
         
+        self.cellClass = cellClass
         super.init()
         
     }
-    
+   
 }
