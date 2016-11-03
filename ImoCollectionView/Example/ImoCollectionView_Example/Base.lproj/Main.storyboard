@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dvd-4E-hN7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,25 +22,126 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmW-4u-ZKQ" customClass="ImoCollectionView" customModule="ImoCollectionView">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luz-fz-5Lv">
+                                <rect key="frame" x="16" y="83" width="343" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="uXc-pH-J3W"/>
+                                </constraints>
+                                <state key="normal" title="TextExample"/>
+                                <connections>
+                                    <segue destination="o6X-qS-4OV" kind="show" id="o0c-bT-DAZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zu-oV-iwI">
+                                <rect key="frame" x="16" y="167" width="343" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="ujh-rB-kTD"/>
+                                </constraints>
+                                <state key="normal" title="PicturesExample"/>
+                                <connections>
+                                    <segue destination="Z1E-Zj-hih" kind="show" id="4nT-ks-8PP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VmW-4u-ZKQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="S7d-EK-aF2"/>
-                            <constraint firstItem="VmW-4u-ZKQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SpT-aO-ldx"/>
-                            <constraint firstAttribute="trailing" secondItem="VmW-4u-ZKQ" secondAttribute="trailing" id="gRH-I7-ETP"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VmW-4u-ZKQ" secondAttribute="bottom" id="uV2-rm-yOQ"/>
+                            <constraint firstItem="Luz-fz-5Lv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4rJ-iw-aBW"/>
+                            <constraint firstItem="Luz-fz-5Lv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gbf-jp-DA8"/>
+                            <constraint firstItem="5Zu-oV-iwI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="K0Z-Ss-tqH"/>
+                            <constraint firstItem="Luz-fz-5Lv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="dqZ-V5-uCa"/>
+                            <constraint firstAttribute="trailing" secondItem="5Zu-oV-iwI" secondAttribute="trailing" constant="16" id="hgo-NU-SdY"/>
+                            <constraint firstItem="5Zu-oV-iwI" firstAttribute="top" secondItem="Luz-fz-5Lv" secondAttribute="bottom" constant="14" id="snq-rb-oJz"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="collectionView" destination="VmW-4u-ZKQ" id="FmP-TJ-C8H"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="fvm-wq-B58"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="137.18140929535232"/>
+            <point key="canvasLocation" x="916" y="90.404797601199405"/>
+        </scene>
+        <!--Text-->
+        <scene sceneID="80F-u2-U7s">
+            <objects>
+                <viewController title="Text" id="o6X-qS-4OV" customClass="TextExampleViewController" customModule="ImoCollectionView_Example" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="whJ-BM-2ku"/>
+                        <viewControllerLayoutGuide type="bottom" id="6F0-1N-fhN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eoc-IB-oVc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lz2-Sn-65m" customClass="ImoCollectionView" customModule="ImoCollectionView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6F0-1N-fhN" firstAttribute="top" secondItem="lz2-Sn-65m" secondAttribute="bottom" id="21v-BA-ZA7"/>
+                            <constraint firstAttribute="trailing" secondItem="lz2-Sn-65m" secondAttribute="trailing" id="VPQ-vg-B7F"/>
+                            <constraint firstItem="lz2-Sn-65m" firstAttribute="top" secondItem="Eoc-IB-oVc" secondAttribute="top" id="a5X-vW-EUr"/>
+                            <constraint firstItem="lz2-Sn-65m" firstAttribute="leading" secondItem="Eoc-IB-oVc" secondAttribute="leading" id="qNY-fo-Mj0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="lz2-Sn-65m" id="uzb-oY-afG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RLr-ip-z8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712.8" y="89.505247376311857"/>
+        </scene>
+        <!--Pictures-->
+        <scene sceneID="5B6-3e-B4F">
+            <objects>
+                <viewController title="Pictures" id="Z1E-Zj-hih" customClass="PicturesViewController" customModule="ImoCollectionView_Example" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O5N-dx-6wr"/>
+                        <viewControllerLayoutGuide type="bottom" id="KKX-98-6hy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="meP-EA-3NJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1b-RN-FS0" customClass="ImoCollectionView" customModule="ImoCollectionView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s1b-RN-FS0" firstAttribute="top" secondItem="meP-EA-3NJ" secondAttribute="top" id="73a-8N-dR9"/>
+                            <constraint firstItem="s1b-RN-FS0" firstAttribute="leading" secondItem="meP-EA-3NJ" secondAttribute="leading" id="OCK-eO-Y2e"/>
+                            <constraint firstItem="KKX-98-6hy" firstAttribute="top" secondItem="s1b-RN-FS0" secondAttribute="bottom" id="cnX-jd-gZ6"/>
+                            <constraint firstAttribute="trailing" secondItem="s1b-RN-FS0" secondAttribute="trailing" id="zxJ-2T-Mcj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="s1b-RN-FS0" id="Bgx-F9-LZh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jyK-3r-edd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="916" y="850"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cxn-78-GOX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dvd-4E-hN7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DNs-Pq-10U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="f73-lh-ne6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ouc-we-ZqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.199999999999999" y="90.404797601199405"/>
         </scene>
     </scenes>
 </document>

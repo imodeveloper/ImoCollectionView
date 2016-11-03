@@ -17,13 +17,24 @@ class ViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        collectionView.addSection(section: firstSection())
-        collectionView.addSection(section: secondSection())
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
+        /*
         collectionView.didSelectItemAt = { indexPath in
             
             print(indexPath)
             
         }
+ */
+    }
+    
+    
+    func populateTable() {
+        
+        //collectionView.deleteAllSections()
+        //collectionView.addSection(section: firstSection())
+        //collectionView.addSection(section: secondSection())
+        //collectionView.reloadData()
     }
     
     
@@ -38,6 +49,7 @@ class ViewController: UIViewController {
     func firstSection() -> ImoCollectionViewSection {
         
         let section = ImoCollectionViewSection()
+        section.inset = UIEdgeInsets(top: 0, left: 15, bottom: 15, right: 15)
         section.headerViewSource = header(title: "Title for first header");
         
         for _ in 1...20
@@ -52,7 +64,7 @@ class ViewController: UIViewController {
     func secondSection() -> ImoCollectionViewSection {
         
         let section = ImoCollectionViewSection()
-        section.inset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
+        section.inset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
         section.minimumLineSpacing = 1
         section.minimumLineSpacing = 1
         section.headerViewSource = header(title: "Title for second header");
@@ -83,7 +95,15 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         
         super.viewDidLayoutSubviews()
-        collectionView.reloadData()
+        
+        
+
+    }
+    
+    func rotated()
+    {
+        populateTable()
+        
     }
     
 }

@@ -229,6 +229,13 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
         
     }
     
+    public func deleteAllSections() {
+        
+        self.sections.removeAll()
+        
+    }
+    
+    
     
     // MARK: - UICollectionViewDelegateFlowLayout
     

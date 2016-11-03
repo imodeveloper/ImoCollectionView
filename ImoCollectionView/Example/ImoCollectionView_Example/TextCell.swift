@@ -31,8 +31,10 @@ class TextCellSource: ImoCollectionViewCellSource {
         self.font = UIFont(name:"HelveticaNeue", size: 14)
         super.init(cellClass: "TextCell")
         
-        let screenSize: CGRect = UIScreen.main.bounds
+        let screenSize: CGRect =  UIScreen.main.bounds
         self.width = screenSize.width
+        
+        print(self.width)
         
         if let font = self.font {
             
@@ -47,6 +49,10 @@ class TextCellSource: ImoCollectionViewCellSource {
         
         self.nib = UINib(nibName: self.cellClass, bundle: Bundle.init(for: self.classForCoder))
     }
+    
+    
+    
+    
     
 }
 
