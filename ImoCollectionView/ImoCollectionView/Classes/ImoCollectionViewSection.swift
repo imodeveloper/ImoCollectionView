@@ -17,7 +17,7 @@ open class ImoCollectionViewSection: NSObject {
     open var inset: UIEdgeInsets
     
     open var headerViewSource: ImoCollectionReusableViewSource?
-    open var footerView: ImoCollectionReusableViewSource?
+    open var footerViewSource: ImoCollectionReusableViewSource?
     
     public override init() {
         

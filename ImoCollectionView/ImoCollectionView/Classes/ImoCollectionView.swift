@@ -102,7 +102,7 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        if let headerViewSource = self.reusableViewSourceForIndexPath(indexPath: indexPath)
+        if let headerViewSource = self.reusableViewSourceForIndexPath(indexPath: indexPath, kind: kind)
         {
            self.registerClassForReusableView(reusableViewSource: headerViewSource)
             
@@ -199,12 +199,18 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     }
     
     
-    public func reusableViewSourceForIndexPath(indexPath:IndexPath) -> ImoCollectionReusableViewSource? {
+    public func reusableViewSourceForIndexPath(indexPath:IndexPath,kind: String) -> ImoCollectionReusableViewSource? {
         
         if self.sections.indices.contains(indexPath.section) {
-            
+
             let section : ImoCollectionViewSection = self.sections[indexPath.section]
-            return section.headerViewSource
+            
+            if (kind == UICollectionElementKindSectionHeader) {
+                return section.headerViewSource
+            }
+            else if (kind == UICollectionElementKindSectionFooter) {
+                return section.footerViewSource
+            }
         }
         
         return nil
@@ -300,6 +306,16 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        
+        if let section = self.sectionForIndex(section: section) {
+            
+            if let footer = section.footerViewSource {
+                
+                if let size = footer.size {
+                    return size;
+                }
+            }
+        }
         
         return CGSize(width: 0, height: 0)
         

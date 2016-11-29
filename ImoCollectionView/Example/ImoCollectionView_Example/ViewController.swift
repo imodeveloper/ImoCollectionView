@@ -38,9 +38,9 @@ class ViewController: UIViewController {
     }
     
     
-    func header(title:String) -> HeaderViewSource {
+    func header(title:String) -> TitleHeaderViewSource {
         
-        let header = HeaderViewSource(headerWithHeight: 50)
+        let header = TitleHeaderViewSource(headerWithHeight: 50)
         header.title = "Title for first header"
         return header
     }

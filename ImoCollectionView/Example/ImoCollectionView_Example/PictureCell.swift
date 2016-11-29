@@ -39,7 +39,5 @@ class PictureCell: ImoCollectionViewCell {
             imageView.image = UIImage(named: source.pictureName)
             
         }
-        
-    }
-    
+    }    
 }

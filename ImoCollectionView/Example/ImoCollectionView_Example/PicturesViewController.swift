@@ -23,7 +23,11 @@ class PicturesViewController: UIViewController {
         
         collectionView.deleteAllSections()
         collectionView.addSection(section: section(pictures:imagesCats, headerTitle:"Cats"))
-        collectionView.addSection(section: section(pictures:imagesNature, headerTitle:"Nature"))
+        
+        let sectionObj = section(pictures:imagesNature, headerTitle:"Nature")
+        sectionObj.footerViewSource = footer(text: texts[0])
+        
+        collectionView.addSection(section: sectionObj)
         collectionView.reloadData()
     }
     
@@ -44,11 +48,19 @@ class PicturesViewController: UIViewController {
         return section;
     }
     
-    func header(title:String) -> HeaderViewSource {
+    func header(title:String) -> TitleHeaderViewSource {
         
-        let header = HeaderViewSource(headerWithHeight: 50)
+        let header = TitleHeaderViewSource(headerWithHeight: 50)
         header.title = title
         return header
+    }
+    
+    func footer(text:String) -> TextFooterViewSource {
+        
+        let footer = TextFooterViewSource(footerWithHeight: 200)
+        footer.text = texts[0]
+        return footer;
+        
     }
 
     override func didReceiveMemoryWarning() {
