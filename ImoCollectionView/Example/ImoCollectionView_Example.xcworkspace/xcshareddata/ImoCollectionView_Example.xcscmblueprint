@@ -1,29 +1,30 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7E7521EDD077F90A73A204B13DA93B040AF41EF1",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "7E7521EDD077F90A73A204B13DA93B040AF41EF1" : 9223372036854775807,
-    "BD3C1994CF7F113EB8E44A2BA13779530C731F28" : 9223372036854775807
+    "AEFF1A2786FE30901BB1F5648DE855F791FD5928" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BAFF0930-3D84-4B2A-84B7-367C18383305",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "7E7521EDD077F90A73A204B13DA93B040AF41EF1" : "",
-    "BD3C1994CF7F113EB8E44A2BA13779530C731F28" : ".."
+    "7E7521EDD077F90A73A204B13DA93B040AF41EF1" : "ImoCollectionView\/",
+    "AEFF1A2786FE30901BB1F5648DE855F791FD5928" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "ImoCollectionView_Example",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/ImoCollectionView_Example.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ImoCollectionView\/Example\/ImoCollectionView_Example.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/imodeveloper\/ImoCollectionView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/imodeveloperlab\/ImoCollectionView",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E7521EDD077F90A73A204B13DA93B040AF41EF1"
     },
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com\/imodeveloper\/ImoDynamicPopUp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git-internal.md.winify.com:muume-2\/muume2.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BD3C1994CF7F113EB8E44A2BA13779530C731F28"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AEFF1A2786FE30901BB1F5648DE855F791FD5928"
     }
   ]
 }
