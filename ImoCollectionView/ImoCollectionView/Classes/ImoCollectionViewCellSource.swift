@@ -15,11 +15,9 @@ open class ImoCollectionViewCellSource : NSObject {
     open var width : CGFloat?
     open var nib : UINib?
     
-    public init(cellClass:String) {
-        
+    public init(cellClass:String) {        
         self.cellClass = cellClass
         super.init()
-        
     }
    
 }

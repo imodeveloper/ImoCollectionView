@@ -16,7 +16,6 @@ open class ImoCollectionViewCell : UICollectionViewCell {
     
     open override func prepareForReuse() {
     
-        
     }
     
 }

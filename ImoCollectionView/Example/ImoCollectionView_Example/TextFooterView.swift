@@ -24,16 +24,7 @@ class TextFooterViewSource: ImoCollectionReusableViewSource {
         
         let screenSize: CGRect =  UIScreen.main.bounds
         
-        if let font = self.font {
-            
-            let size = font.sizeOfString(string: self.text! , constrainedToWidth: Double(screenSize.width-30))
-            setHeight(height:CGFloat(size.height + 25))
-            
-        }
-        else {
-            
-           setHeight(height: 100)
-        }
+        setHeight(height: 100)
         
         self.viewClass = "TextFooterView"
         self.nib = UINib(nibName: self.viewClass, bundle: Bundle.init(for: self.classForCoder))

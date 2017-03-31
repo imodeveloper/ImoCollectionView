@@ -18,7 +18,6 @@ class PictureCellSource: ImoCollectionViewCellSource {
     public init(picture:String) {
         
         self.pictureName = picture
-        
         super.init(cellClass: "PictureCell")
         self.height = 100
         self.width = 100

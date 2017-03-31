@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		411DB7011E8E497C0081A45C /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411DB6FF1E8E497C0081A45C /* DemoCell.swift */; };
+		411DB7021E8E497C0081A45C /* DemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411DB7001E8E497C0081A45C /* DemoCell.xib */; };
 		4131609D1DC350120071D8EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131609C1DC350120071D8EA /* AppDelegate.swift */; };
 		4131609F1DC350120071D8EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131609E1DC350120071D8EA /* ViewController.swift */; };
 		413160A21DC350120071D8EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413160A01DC350120071D8EA /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		411DB6FF1E8E497C0081A45C /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
+		411DB7001E8E497C0081A45C /* DemoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCell.xib; sourceTree = "<group>"; };
 		413160991DC350120071D8EA /* ImoCollectionView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImoCollectionView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4131609C1DC350120071D8EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4131609E1DC350120071D8EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		411DB6FE1E8E495B0081A45C /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				411DB6FF1E8E497C0081A45C /* DemoCell.swift */,
+				411DB7001E8E497C0081A45C /* DemoCell.xib */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
 		413160901DC350120071D8EA = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +169,7 @@
 				4131609E1DC350120071D8EA /* ViewController.swift */,
 				41C6F7AE1DCA448F00611E60 /* Data.swift */,
 				418B258A1DCCB782004EEF9A /* Tools.swift */,
+				411DB6FE1E8E495B0081A45C /* Demo */,
 				418B25601DCC8D4F004EEF9A /* Headers and Footers */,
 				416B54B01DCB78E4009DF761 /* PicturesExample */,
 				41C6F7AD1DCA42F700611E60 /* TextExample */,
@@ -359,6 +373,7 @@
 				41C6F7C81DCA46FA00611E60 /* nature_6.png in Resources */,
 				41C6F7B61DCA464A00611E60 /* cat_2.png in Resources */,
 				41C6F7B91DCA464A00611E60 /* cat_1.png in Resources */,
+				411DB7021E8E497C0081A45C /* DemoCell.xib in Resources */,
 				41C6F7A31DC9F36700611E60 /* cat_7.png in Resources */,
 				41C6F7CB1DCA46FA00611E60 /* nature_2.png in Resources */,
 				41C6F7B71DCA464A00611E60 /* cat_4.png in Resources */,
@@ -481,6 +496,7 @@
 				418B25871DCC9671004EEF9A /* TextFooterView.swift in Sources */,
 				41C6F7A01DC9F1F400611E60 /* PictureCell.swift in Sources */,
 				416B54B21DCB7901009DF761 /* PicturesViewController.swift in Sources */,
+				411DB7011E8E497C0081A45C /* DemoCell.swift in Sources */,
 				418B257F1DCC91C1004EEF9A /* TitleHeaderView.swift in Sources */,
 				41C6F7AF1DCA448F00611E60 /* Data.swift in Sources */,
 				418B258B1DCCB782004EEF9A /* Tools.swift in Sources */,

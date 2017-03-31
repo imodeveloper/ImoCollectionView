@@ -25,7 +25,7 @@ class TextExampleViewController: UIViewController {
         
         collectionView.deleteAllSections()
         collectionView.addSection(section: section())
-        collectionView.reloadData()
+        collectionView.update()
     }
     
     func section() -> ImoCollectionViewSection {
@@ -35,11 +35,13 @@ class TextExampleViewController: UIViewController {
         section.minimumLineSpacing = 1
         section.minimumLineSpacing = 1
         
-        for text in texts
-        {
+        for text in texts {
             let source = TextCellSource(text: text)
-            section.addSource(source: source);
+            section.addSource(source);
         }
+        
+        let x = DemoCellSource()
+        section.addSource(x)
         
         return section;
     }

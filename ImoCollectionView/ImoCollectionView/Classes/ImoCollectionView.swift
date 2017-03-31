@@ -12,13 +12,14 @@ protocol ImoCollectionViewProtocol {
     
 }
 
-public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate {
+public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate {
     
     // MARK: - Proprietes
     
     var registeredCells = Array<String>()
     var registeredViews = Array<String>()
     var sections = Array<ImoCollectionViewSection>()
+    public var collectionView: UICollectionView
     
     public var didSelectSource:((ImoCollectionViewCellSource?) -> (Void))?
     public var didSelectItemAt:((IndexPath) -> (Void))?
@@ -31,31 +32,32 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     
     // MARK: - UICollectionView
     
-    public init(controller: UIViewController, collectionViewLayout layout: UICollectionViewLayout) {
+    public init(on view: UIView,
+                collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout(),
+                insets:UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)) {
         
-        super.init(frame: controller.view.frame, collectionViewLayout: layout)
+        self.collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        super.init(frame: view.frame)
+        view.addSubview(self)
+        view.edgesConstraints(to: self, insets: insets)
         self.setUp()
     }
     
-    public override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    required public init?(coder aDecoder: NSCoder) {
         
-        super.init(frame: frame, collectionViewLayout: layout)
+        let layout = UICollectionViewFlowLayout()
+        self.collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), collectionViewLayout: layout)
+        super.init(coder: aDecoder)
         self.setUp()
     }
     
     func setUp() {
         
-        self.backgroundColor = UIColor.clear
-        self.delegate = self;
-        self.dataSource = self;
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        
-        super.init(coder: aDecoder)
-        let layout = UICollectionViewFlowLayout()
-        self.setCollectionViewLayout(layout, animated: false)
-        self.setUp()        
+        self.collectionView.backgroundColor = UIColor.clear
+        self.collectionView.delegate = self;
+        self.collectionView.dataSource = self;
+        self.addSubview(self.collectionView)
+        self.edgesConstraints(to: self.collectionView)
     }
     
     
@@ -81,7 +83,6 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     }
     
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
         return self.sectionsCount()
     }
     
@@ -91,9 +92,10 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
            
             self.registerCellClassForSource(source: source)
             
-            let cell : ImoCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: source.cellClass, for: indexPath) as! ImoCollectionViewCell
-            cell.setUpWithSource(source: source)
-            return cell as UICollectionViewCell
+            if let cell : ImoCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: source.cellClass, for: indexPath) as? ImoCollectionViewCell {
+                cell.setUpWithSource(source: source)
+                return cell as UICollectionViewCell
+            }
         }
         
         return UICollectionViewCell()
@@ -142,7 +144,6 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     public func sourcesCount(inSection sectionIndex:Int) -> Int {
         
         if self.sections.indices.contains(sectionIndex) {
-            
             let section : ImoCollectionViewSection = self.sections[sectionIndex]
             return section.countSources()
         }
@@ -154,13 +155,12 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     public func registerCellClassForSource(source:ImoCollectionViewCellSource) {
         
         if !registeredCells.contains(source.cellClass) {
-         
             if let _ = source.nib {
-                self.register(source.nib, forCellWithReuseIdentifier: source.cellClass)
+                self.collectionView.register(source.nib, forCellWithReuseIdentifier: source.cellClass)
                 registeredCells.append(source.cellClass)
             }
             else {
-                self.register(NSClassFromString(source.cellClass), forCellWithReuseIdentifier:source.cellClass)
+                self.collectionView.register(NSClassFromString(source.cellClass), forCellWithReuseIdentifier:source.cellClass)
                 registeredCells.append(source.cellClass)
             }
         }
@@ -172,15 +172,12 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
         let identifier = reusableViewSource.viewClass.appending(reusableViewSource.indentifier)
         
         if !registeredViews.contains(identifier)  {
-            
             if let _ = reusableViewSource.nib {
-                
-                self.register(reusableViewSource.nib, forSupplementaryViewOfKind:  reusableViewSource.kind, withReuseIdentifier: reusableViewSource.indentifier)
+                self.collectionView.register(reusableViewSource.nib, forSupplementaryViewOfKind:  reusableViewSource.kind, withReuseIdentifier: reusableViewSource.indentifier)
                 registeredViews.append(identifier)
                 
             } else {
-                
-                self.register(NSClassFromString(reusableViewSource.viewClass), forSupplementaryViewOfKind: reusableViewSource.kind, withReuseIdentifier:reusableViewSource.indentifier)
+                self.collectionView.register(NSClassFromString(reusableViewSource.viewClass), forSupplementaryViewOfKind: reusableViewSource.kind, withReuseIdentifier:reusableViewSource.indentifier)
                 registeredViews.append(identifier)
             }
         }
@@ -190,14 +187,12 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
     public func cellSourceForIndexPath(indexPath:IndexPath) -> ImoCollectionViewCellSource? {
         
         if self.sections.indices.contains(indexPath.section) {
-            
             let section : ImoCollectionViewSection = self.sections[indexPath.section]
             return section.sourceAtIndex(index: indexPath.row)
         }
         
         return nil
     }
-    
     
     public func reusableViewSourceForIndexPath(indexPath:IndexPath,kind: String) -> ImoCollectionReusableViewSource? {
         
@@ -216,8 +211,6 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
         return nil
     }
     
-    
-    
     public func sectionForIndex(section:Int) -> ImoCollectionViewSection? {
         
         if self.sections.indices.contains(section) {
@@ -228,19 +221,17 @@ public class ImoCollectionView: UICollectionView,UICollectionViewDataSource,UICo
         return nil
     }
     
-    
     public func addSection(section:ImoCollectionViewSection) {
-        
         self.sections.append(section)
-        
     }
     
     public func deleteAllSections() {
-        
         self.sections.removeAll()
-        
     }
     
+    public func update() {
+        self.collectionView.reloadData()
+    }
     
     
     // MARK: - UICollectionViewDelegateFlowLayout

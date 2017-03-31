@@ -28,7 +28,7 @@ class PicturesViewController: UIViewController {
         sectionObj.footerViewSource = footer(text: texts[0])
         
         collectionView.addSection(section: sectionObj)
-        collectionView.reloadData()
+        collectionView.update()
     }
     
     func section(pictures:Array<String>,headerTitle:String) -> ImoCollectionViewSection {
@@ -39,10 +39,9 @@ class PicturesViewController: UIViewController {
         section.minimumLineSpacing = 15
         section.minimumLineSpacing = 25
         
-        for pictureName in pictures
-        {
+        for pictureName in pictures {
             let source = PictureCellSource(picture: pictureName)
-            section.addSource(source: source);
+            section.addSource(source);
         }
 
         return section;
