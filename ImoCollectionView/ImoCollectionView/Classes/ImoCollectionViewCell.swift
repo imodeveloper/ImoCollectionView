@@ -10,13 +10,11 @@ import UIKit
 
 open class ImoCollectionViewCell : UICollectionViewCell {
     
-    open func setUpWithSource(source:AnyObject) {
+    open func setUpWithSource(source: AnyObject) {
 
     }
     
     open override func prepareForReuse() {
     
     }
-    
 }
-

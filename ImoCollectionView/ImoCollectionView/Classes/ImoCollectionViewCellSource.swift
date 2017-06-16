@@ -14,6 +14,7 @@ open class ImoCollectionViewCellSource : NSObject {
     open var height : CGFloat?
     open var width : CGFloat?
     open var nib : UINib?
+    open var accessibilityIdentifier: String?
     
     public init(cellClass:String) {        
         self.cellClass = cellClass
