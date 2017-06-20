@@ -5,26 +5,26 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "7E7521EDD077F90A73A204B13DA93B040AF41EF1" : 9223372036854775807,
-    "0F1913A355314766FA3FD64A8C0DAA94279867D7" : 9223372036854775807
+    "B55AD269E2332148FB943F6FBA665CCE1C3AB728" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9095CF89-6FE2-47B8-A170-0A6F1F6E1282",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "7E7521EDD077F90A73A204B13DA93B040AF41EF1" : "ImoCollectionView\/",
-    "0F1913A355314766FA3FD64A8C0DAA94279867D7" : ".."
+    "B55AD269E2332148FB943F6FBA665CCE1C3AB728" : ".."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "ImoCollectionView",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ImoCollectionView\/ImoCollectionView\/ImoCollectionView\/ImoCollectionView.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git-internal.md.winify.com:muume-2\/FrameworksBuilder.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0F1913A355314766FA3FD64A8C0DAA94279867D7"
-    },
-    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/imodeveloperlab\/ImoCollectionView.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E7521EDD077F90A73A204B13DA93B040AF41EF1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git-internal.md.winify.com:muume-2\/FrameworksBuilder.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B55AD269E2332148FB943F6FBA665CCE1C3AB728"
     }
   ]
 }
