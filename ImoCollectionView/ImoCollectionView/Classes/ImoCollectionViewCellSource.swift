@@ -10,10 +10,10 @@ import UIKit
 
 open class ImoCollectionViewCellSource : NSObject {
 
-    open var cellClass : String
-    open var height : CGFloat?
-    open var width : CGFloat?
-    open var nib : UINib?
+    open var cellClass: String
+    open var height: CGFloat?
+    open var width: CGFloat?
+    open var nib: UINib?
     open var accessibilityIdentifier: String?
     
     public init(cellClass:String) {        

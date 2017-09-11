@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ImoCollectionViewCell : UICollectionViewCell {
+open class ImoCollectionViewCell: UICollectionViewCell {
     
     open func setUpWithSource(source: AnyObject) {
 

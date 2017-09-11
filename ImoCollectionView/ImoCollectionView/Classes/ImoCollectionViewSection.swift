@@ -36,7 +36,7 @@ open class ImoCollectionViewSection: NSObject {
     /// Add array of sources in section
     ///
     /// - Parameter sources: Sources array
-    public func addSources(_ sources:[ImoCollectionViewCellSource]) {
+    public func addSources(_ sources: [ImoCollectionViewCellSource]) {
         for source in sources {
             self.sources.append(source);
         }
@@ -45,14 +45,14 @@ open class ImoCollectionViewSection: NSObject {
     /// Add one source in section
     ///
     /// - Parameter source: Source
-    public func addSource(_ source:ImoCollectionViewCellSource) {
+    public func addSource(_ source: ImoCollectionViewCellSource) {
         self.sources.append(source);
     }
     
     /// Remove soure from section
     ///
     /// - Parameter source: source object to remove
-    public func removeSource(source:ImoCollectionViewCellSource) {
+    public func removeSource(source: ImoCollectionViewCellSource) {
         if let index = self.indexOfSource(source: source) {
             sources.remove(at:index)
         }
@@ -74,7 +74,7 @@ open class ImoCollectionViewSection: NSObject {
     ///
     /// - Parameter index: Index Number
     /// - Returns: true / false
-    public func containIndex(index:Int) -> Bool {
+    public func containIndex(index: Int) -> Bool {
         if sources.indices.contains(index) {
             return true
         }
@@ -85,7 +85,7 @@ open class ImoCollectionViewSection: NSObject {
     ///
     /// - Parameter index: Source Index
     /// - Returns: ImoCollectionViewCellSource
-    public func sourceAtIndex(index:Int) -> ImoCollectionViewCellSource?  {
+    public func sourceAtIndex(index: Int) -> ImoCollectionViewCellSource?  {
         if self.containIndex(index: index) {
             return sources[index]
         }
@@ -103,7 +103,7 @@ open class ImoCollectionViewSection: NSObject {
     ///
     /// - Parameter source: Source to check index for
     /// - Returns: Index number for source
-    public func indexOfSource(source:ImoCollectionViewCellSource) -> Int? {
+    public func indexOfSource(source: ImoCollectionViewCellSource) -> Int? {
         return sources.index(of: source)
     }
 }

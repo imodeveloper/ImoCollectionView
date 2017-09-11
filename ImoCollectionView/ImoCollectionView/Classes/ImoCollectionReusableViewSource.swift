@@ -13,11 +13,11 @@ open class ImoCollectionReusableViewSource : NSObject {
     open var viewClass = "ImoCollectionView.ImoCollectionReusableView"
     open var indentifier = "ImoCollectionReusableView"
     
-    open var kind : String = UICollectionElementKindSectionHeader
-    open var size : CGSize?
-    open var nib : UINib?
+    open var kind: String = UICollectionElementKindSectionHeader
+    open var size: CGSize?
+    open var nib: UINib?
     
-    public init(headerWithHeight height:CGFloat) {
+    public init(headerWithHeight height: CGFloat) {
         
         super.init()
         
@@ -25,7 +25,7 @@ open class ImoCollectionReusableViewSource : NSObject {
         setUp(height: height)
     }
     
-    public init(footerWithHeight height:CGFloat) {
+    public init(footerWithHeight height: CGFloat) {
         
         super.init()
         self.kind = UICollectionElementKindSectionFooter
@@ -33,14 +33,12 @@ open class ImoCollectionReusableViewSource : NSObject {
     }
     
     
-    public func setHeight(height:CGFloat) {
-        
+    public func setHeight(height: CGFloat) {
         self.size = CGSize(width: 1, height: height);
-        
     }
     
     
-    func setUp(height:CGFloat) {
+    func setUp(height: CGFloat) {
         
         self.size = CGSize(width: 1, height: height);
         self.indentifier = "ImoCollectionReusableView"

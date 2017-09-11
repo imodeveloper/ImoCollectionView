@@ -21,13 +21,13 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     var sections = Array<ImoCollectionViewSection>()
     public var collectionView: UICollectionView
     
-    public var didSelectSource:((ImoCollectionViewCellSource?) -> (Void))?
-    public var didSelectItemAt:((IndexPath) -> (Void))?
-    public var scrollViewDidScroll:((UIScrollView) -> (Void))?
-    public var scrollViewDidZoom:((UIScrollView) -> (Void))?
-    public var scrollViewWillBeginDragging:((UIScrollView) -> (Void))?
-    public var scrollViewWillEndDragging:((_ scrollView: UIScrollView, _ velocity: CGPoint, _ targetContentOffset: UnsafeMutablePointer<CGPoint>) -> (Void))?
-    public var scrollViewDidEndDragging:((_ scrollView: UIScrollView, _ decelerate: Bool) -> (Void))?
+    public var didSelectSource: ((ImoCollectionViewCellSource?) -> (Void))?
+    public var didSelectItemAt: ((IndexPath) -> (Void))?
+    public var scrollViewDidScroll: ((UIScrollView) -> (Void))?
+    public var scrollViewDidZoom: ((UIScrollView) -> (Void))?
+    public var scrollViewWillBeginDragging: ((UIScrollView) -> (Void))?
+    public var scrollViewWillEndDragging: ((_ scrollView: UIScrollView, _ velocity: CGPoint, _ targetContentOffset: UnsafeMutablePointer<CGPoint>) -> (Void))?
+    public var scrollViewDidEndDragging: ((_ scrollView: UIScrollView, _ decelerate: Bool) -> (Void))?
     public var scrollViewWillBeginDecelerating:((UIScrollView) -> (Void))?
     
     // MARK: - UICollectionView
@@ -46,7 +46,8 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     required public init?(coder aDecoder: NSCoder) {
         
         let layout = UICollectionViewFlowLayout()
-        self.collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), collectionViewLayout: layout)
+        self.collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 100, height: 100),
+                                               collectionViewLayout: layout)
         super.init(coder: aDecoder)
         self.setUp()
     }
@@ -102,10 +103,12 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     }
     
     
-    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    public func collectionView(_ collectionView: UICollectionView,
+                               viewForSupplementaryElementOfKind kind: String,
+                               at indexPath: IndexPath) -> UICollectionReusableView {
         
-        if let headerViewSource = self.reusableViewSourceForIndexPath(indexPath: indexPath, kind: kind)
-        {
+        if let headerViewSource = self.reusableViewSourceForIndexPath(indexPath: indexPath, kind: kind) {
+            
            self.registerClassForReusableView(reusableViewSource: headerViewSource)
             
             let view : ImoCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: headerViewSource.kind, withReuseIdentifier: headerViewSource.indentifier, for: indexPath) as! ImoCollectionReusableView
@@ -113,14 +116,11 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
             view.setUpWithSource(source: headerViewSource)
             
             return view;
-        }
-        else
-        {
+            
+        } else {
             return UICollectionReusableView()
         }
-        
     }
-    
     
     // MARK: - Helpers
     
@@ -141,10 +141,10 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
         return sections.count
     }
     
-    public func sourcesCount(inSection sectionIndex:Int) -> Int {
+    public func sourcesCount(inSection sectionIndex: Int) -> Int {
         
         if self.sections.indices.contains(sectionIndex) {
-            let section : ImoCollectionViewSection = self.sections[sectionIndex]
+            let section: ImoCollectionViewSection = self.sections[sectionIndex]
             return section.countSources()
         }
         
@@ -152,7 +152,7 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     }
     
     
-    public func registerCellClassForSource(source:ImoCollectionViewCellSource) {
+    public func registerCellClassForSource(source: ImoCollectionViewCellSource) {
         
         if !registeredCells.contains(source.cellClass) {
             if let _ = source.nib {
@@ -160,14 +160,16 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
                 registeredCells.append(source.cellClass)
             }
             else {
-                self.collectionView.register(NSClassFromString(source.cellClass), forCellWithReuseIdentifier:source.cellClass)
+                self.collectionView.register(NSClassFromString(source.cellClass),
+                                             forCellWithReuseIdentifier:source.cellClass)
+                
                 registeredCells.append(source.cellClass)
             }
         }
     }
     
     
-    public func registerClassForReusableView(reusableViewSource:ImoCollectionReusableViewSource) {
+    public func registerClassForReusableView(reusableViewSource: ImoCollectionReusableViewSource) {
         
         let identifier = reusableViewSource.viewClass.appending(reusableViewSource.indentifier)
         
@@ -184,7 +186,7 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     }
     
     
-    public func cellSourceForIndexPath(indexPath:IndexPath) -> ImoCollectionViewCellSource? {
+    public func cellSourceForIndexPath(indexPath: IndexPath) -> ImoCollectionViewCellSource? {
         
         if self.sections.indices.contains(indexPath.section) {
             let section : ImoCollectionViewSection = self.sections[indexPath.section]
@@ -194,7 +196,7 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
         return nil
     }
     
-    public func reusableViewSourceForIndexPath(indexPath:IndexPath,kind: String) -> ImoCollectionReusableViewSource? {
+    public func reusableViewSourceForIndexPath(indexPath: IndexPath,kind: String) -> ImoCollectionReusableViewSource? {
         
         if self.sections.indices.contains(indexPath.section) {
 
@@ -236,22 +238,23 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     
     // MARK: - UICollectionViewDelegateFlowLayout
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
             
             if (source.width != nil && source.height != nil) {
-                
                 return CGSize(width: source.width!, height: source.height!)
-                
             }
-            
         }
         
         return CGSize(width: 0, height: 0)
     }
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
         if let section = self.sectionForIndex(section: section) {
             return section.minimumLineSpacing
@@ -260,7 +263,9 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
         return 0
     }
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
         if let section = self.sectionForIndex(section: section) {
             return section.minimumInteritemSpacing
@@ -270,7 +275,9 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     }
     
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               insetForSectionAt section: Int) -> UIEdgeInsets {
         
         if let section = self.sectionForIndex(section: section) {
             return section.inset
@@ -280,7 +287,9 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     }
     
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         if let section = self.sectionForIndex(section: section) {
             
@@ -296,7 +305,9 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     }
     
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               referenceSizeForFooterInSection section: Int) -> CGSize {
         
         if let section = self.sectionForIndex(section: section) {
             
@@ -336,7 +347,9 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     }
     
    
-    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                          withVelocity velocity: CGPoint,
+                                          targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         if let closure = self.scrollViewWillEndDragging {
             closure(scrollView, velocity, targetContentOffset)
@@ -344,7 +357,8 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
     }
     
 
-    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView,
+                                         willDecelerate decelerate: Bool) {
         
         if let closure = self.scrollViewDidEndDragging {
             closure(scrollView, decelerate)
@@ -380,6 +394,4 @@ public class ImoCollectionView: UIView,UICollectionViewDataSource,UICollectionVi
         
         
     }
-    
-    
 }
